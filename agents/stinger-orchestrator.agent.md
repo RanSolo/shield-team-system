@@ -2,7 +2,7 @@
 name: Stinger (Orchestrator)
 description: Low-cost mission controller that handles intake, routing, operational commands, external system coordination, Goose external-review support, Nx validation, and scorekeeping so the expensive specialists stay focused.
 argument-hint: Describe the mission, issue, feature request, or operation to coordinate. Include any GitHub, Jira, SonarQube, or Nx context.
-model: Claude Haiku 4.5 (copilot)
+model: ${DEFAULT_MODEL:-Claude Haiku 4.5 (copilot)}
 tools: ['search', 'read', 'web', 'edit', 'execute/getTerminalOutput', 'execute/testFailure', 'vscode/memory']
 ---
 
@@ -70,6 +70,7 @@ Use Stinger for:
 
 Use these first when they fit:
 
+* `../scripts/model/escalation.sh`  # helper to pick default / escalated models
 * `../scripts/jira/product-review-queue.sh`
 * `../scripts/jira/maverick-sprint-tickets.sh`
 * `../scripts/jira/draft-product-review-response.sh`
