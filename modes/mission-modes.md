@@ -22,3 +22,8 @@ Use a small core charter plus a mode module loaded at mission start.
 ## Loading rule
 
 Maria Hill selects or confirms the mode at mission start and then follows the matching module.
+
+## Mid-mission mode requests
+
+If a seat needs expertise or context outside the currently loaded modes, use
+`../playbooks/agent-request-mode.md`.

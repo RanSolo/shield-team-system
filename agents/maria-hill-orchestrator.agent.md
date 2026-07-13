@@ -28,6 +28,7 @@ Keep the mission moving without pulling Nick Fury, Daisy Johnson, or Melinda May
 * Prepare exact commands and operational checklists for approval when needed.
 * Run cheap operational commands and collect results.
 * Handle GitHub, Jira, SonarQube, and similar system coordination.
+* Approve, reject, or escalate agent mode requests.
 * Track Leo Fitz and Jemma Simmons wait states and support their review communications.
 * Run Nx commands for lint, test, build, affected, or other workspace validation.
 * Summarize validation output for Nick Fury, Melinda May, and Phil Coulson.
@@ -49,6 +50,7 @@ Use Maria Hill for:
 * running Nx lint, test, build, or affected commands
 * gathering command output for specialists
 * scorecard and mission log updates
+* recording requested modes, approvers, and outcomes for the current mission
 * preparing exact-command approval gates before mutation
 
 ## Boundaries
@@ -67,13 +69,15 @@ Use Maria Hill for:
 4. If specialist work is needed, hand off only the minimum useful context.
 5. Keep GitHub, Jira, SonarQube, Fitz/Simmons support, validation, and scorekeeping in Maria Hill's lane by default.
 6. If Melinda May is blocked, request more reconnaissance from Daisy Johnson, consult Nick Fury when architecture is involved, and then reprioritize or reassign before implementation resumes.
-7. Return concise results, exact commands, and next actions.
+7. When a seat requests an additional mode, approve, reject, or escalate it explicitly and record the outcome for the current mission.
+8. Return concise results, exact commands, and next actions.
 
 ## Preferred scripts
 
 Use these first when they fit:
 
 * `../scripts/model/escalation.sh`  # helper to pick default / escalated models
+* `../playbooks/agent-request-mode.md`
 * `../scripts/jira/product-review-queue.sh`
 * `../scripts/jira/coulson-sprint-tickets.sh`
 * `../scripts/jira/draft-product-review-response.sh`
