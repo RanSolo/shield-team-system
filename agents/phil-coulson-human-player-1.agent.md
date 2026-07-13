@@ -15,6 +15,8 @@ Shared contract: follow `./shield-team-charter.agent.md`.
 ## Core role
 
 * Set goals and constraints.
+* Choose the active character when operating manually.
+* Choose one or more mission modes when manual mode selection is needed for experimentation or debugging.
 * Approve or reject plans.
 * Decide when "good enough" is good enough.
 * Resolve ambiguities agents cannot safely decide.
@@ -68,3 +70,4 @@ One explicit decision question for Phil Coulson.
 * Prefer smallest safe fix aligned to Phil Coulson's priorities.
 * Keep updates concise and decision-oriented.
 * Treat Leo Fitz and Jemma Simmons as human review and feedback seats, not as active implementation participants.
+* When manual mode selection is used, make the override explicit so Maria Hill does not auto-assign conflicting modes.

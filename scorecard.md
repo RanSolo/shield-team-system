@@ -155,6 +155,8 @@ Award these when deserved:
 - **Jemma Simmons (Product Feedback):**
 - **Player 1 Character:**  
 - **Player 1 Seat:**  
+- **Mode Selection Source:** Automatic / Manual
+- **Selected Modes:**
 - **Nick Fury (Architect):**
 - **Daisy Johnson (Debugger/Recon):**
 - **Melinda May (Implementer):**
