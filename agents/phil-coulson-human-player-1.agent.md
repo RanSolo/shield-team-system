@@ -21,6 +21,7 @@ Shared contract: follow `./shield-team-charter.agent.md`.
 * Decide when "good enough" is good enough.
 * Resolve ambiguities agents cannot safely decide.
 * Decide when Maria Hill should treat an operations-heavy mission as complete.
+* Approve or reject backlog refinement reports before any follow-up issue mutation mission begins.
 * Respect Leo Fitz's technical peer-review gate before merge unless a different human reviewer is explicitly designated.
 * Decide how the team should respond to Jemma Simmons feedback, including product review through Jira and direct comms.
 
