@@ -5,9 +5,9 @@ MODE="${1:-triage}"
 
 if [[ "${MODE}" == "-h" || "${MODE}" == "--help" ]]; then
   cat <<'EOF'
-Usage: maverick-sprint-tickets.sh [triage|mine-or-sprint|mine|sprint|unclaimed|JQL]
+Usage: coulson-sprint-tickets.sh [triage|mine-or-sprint|mine|sprint|unclaimed|JQL]
 
-Lists Jira issues for the current sprint, issues assigned to Maverick,
+Lists Jira issues for the current sprint, issues assigned to Phil Coulson,
 unclaimed issues, or a triage combination of all three. If the first
 argument is not one of the built-in modes, it is treated as a raw JQL
 string.
@@ -18,7 +18,8 @@ Required environment:
   JIRA_API_TOKEN
 
 Optional environment:
-  JIRA_MAVERICK_EMAIL
+  JIRA_COULSON_EMAIL
+  JIRA_MAVERICK_EMAIL   # legacy compatibility alias
   JIRA_MAX_RESULTS
 EOF
   exit 0
@@ -28,10 +29,10 @@ fi
 : "${JIRA_USER_EMAIL:?Set JIRA_USER_EMAIL first}"
 : "${JIRA_API_TOKEN:?Set JIRA_API_TOKEN first}"
 
-MAVERICK_EMAIL="${JIRA_MAVERICK_EMAIL:-}"
-if [[ -z "${MAVERICK_EMAIL}" ]]; then
-  echo "Missing required environment variable: JIRA_MAVERICK_EMAIL" >&2
-  echo "Set JIRA_MAVERICK_EMAIL to the player email to query assigned issues." >&2
+COULSON_EMAIL="${JIRA_COULSON_EMAIL:-${JIRA_MAVERICK_EMAIL:-}}"
+if [[ -z "${COULSON_EMAIL}" ]]; then
+  echo "Missing required environment variable: JIRA_COULSON_EMAIL" >&2
+  echo "Set JIRA_COULSON_EMAIL to the player email to query assigned issues." >&2
   exit 1
 fi
 MAX_RESULTS="${JIRA_MAX_RESULTS:-25}"
@@ -39,13 +40,13 @@ JIRA_URL="${JIRA_BASE_URL%/}/rest/api/3/search"
 
 case "${MODE}" in
   triage)
-    JQL="(assignee = \"${MAVERICK_EMAIL}\" OR assignee is EMPTY OR sprint in openSprints()) ORDER BY updated DESC"
+    JQL="(assignee = \"${COULSON_EMAIL}\" OR assignee is EMPTY OR sprint in openSprints()) ORDER BY updated DESC"
     ;;
   mine-or-sprint)
-    JQL="(assignee = \"${MAVERICK_EMAIL}\" OR sprint in openSprints()) ORDER BY updated DESC"
+    JQL="(assignee = \"${COULSON_EMAIL}\" OR sprint in openSprints()) ORDER BY updated DESC"
     ;;
   mine)
-    JQL="assignee = \"${MAVERICK_EMAIL}\" ORDER BY updated DESC"
+    JQL="assignee = \"${COULSON_EMAIL}\" ORDER BY updated DESC"
     ;;
   sprint)
     JQL="sprint in openSprints() ORDER BY updated DESC"
@@ -91,17 +92,17 @@ curl -sfS \
   -H "Content-Type: application/json" \
   -X POST \
   --data "${payload}" \
-  "${JIRA_URL}" | python3 - <<'PY' "${MODE}" "${MAVERICK_EMAIL}"
+  "${JIRA_URL}" | python3 - <<'PY' "${MODE}" "${COULSON_EMAIL}"
 import json
 import sys
 
 mode = sys.argv[1]
-maverick_email = sys.argv[2]
+coulson_email = sys.argv[2]
 
 data = json.load(sys.stdin)
 issues = data.get("issues", [])
 
-print(f"Jira Maverick queue ({mode}) for {maverick_email}: {len(issues)} item(s)")
+print(f"Jira Phil Coulson queue ({mode}) for {coulson_email}: {len(issues)} item(s)")
 for issue in issues:
     fields = issue.get("fields", {})
     key = issue.get("key", "UNKNOWN")

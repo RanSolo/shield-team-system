@@ -5,16 +5,25 @@ import { basename, dirname, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const ROLE_FILES = {
-  orchestrator: "stinger-orchestrator.agent.md",
-  stinger: "stinger-orchestrator.agent.md",
-  investigator: "jester-debugger-recon.agent.md",
-  jester: "jester-debugger-recon.agent.md",
-  architect: "viper-architect.agent.md",
-  viper: "viper-architect.agent.md",
-  implementer: "iceman-implementer.agent.md",
-  iceman: "iceman-implementer.agent.md",
-  reviewer: "goose-review-gate-placeholder.agent.md",
-  goose: "goose-review-gate-placeholder.agent.md",
+  orchestrator: "maria-hill-orchestrator.agent.md",
+  hill: "maria-hill-orchestrator.agent.md",
+  stinger: "maria-hill-orchestrator.agent.md",
+  investigator: "daisy-johnson-debugger-recon.agent.md",
+  daisy: "daisy-johnson-debugger-recon.agent.md",
+  jester: "daisy-johnson-debugger-recon.agent.md",
+  architect: "nick-fury-architect.agent.md",
+  fury: "nick-fury-architect.agent.md",
+  viper: "nick-fury-architect.agent.md",
+  implementer: "melinda-may-implementer.agent.md",
+  may: "melinda-may-implementer.agent.md",
+  iceman: "melinda-may-implementer.agent.md",
+  reviewer: "leo-fitz-technical-review.agent.md",
+  fitz: "leo-fitz-technical-review.agent.md",
+  goose: "leo-fitz-technical-review.agent.md",
+  product: "jemma-simmons-product-feedback.agent.md",
+  simmons: "jemma-simmons-product-feedback.agent.md",
+  human: "phil-coulson-human-player-1.agent.md",
+  coulson: "phil-coulson-human-player-1.agent.md",
 };
 
 const scriptDir = dirname(fileURLToPath(import.meta.url));

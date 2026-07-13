@@ -6,13 +6,13 @@ with repository context.
 
 ## Ownership
 
-- **Stinger** owns first-pass intake, cheap scans, and context-pack assembly.
-- **Jester** deepens the investigation when the initial scan is not enough.
-- **Viper** decides when the context is sufficient for architecture or risk
+- **Maria Hill** owns first-pass intake, cheap scans, and context-pack assembly.
+- **Daisy Johnson** deepens the investigation when the initial scan is not enough.
+- **Nick Fury** decides when the context is sufficient for architecture or risk
   judgment.
-- **Iceman** should not implement until the context pack identifies the relevant
+- **Melinda May** should not implement until the context pack identifies the relevant
   build, test, and validation commands.
-- **Maverick** decides when the repo is too ambiguous, too risky, or too large
+- **Phil Coulson** decides when the repo is too ambiguous, too risky, or too large
   for unattended exploration.
 
 ## Goal
@@ -26,7 +26,7 @@ Produce a compact, trustworthy context pack that answers:
 
 ## Cheap Intake Pass
 
-Stinger starts with cheap, repeatable checks:
+Maria Hill starts with cheap, repeatable checks:
 
 ```bash
 git status -sb
@@ -55,7 +55,7 @@ If the repo is a monorepo, also identify:
 
 ## Context Pack
 
-Stinger should assemble a context pack with four parts:
+Maria Hill should assemble a context pack with four parts:
 
 1. **Repo profile**
    Use [repo-profile-template.md](./repo-context/repo-profile-template.md).
@@ -70,7 +70,7 @@ Stinger should assemble a context pack with four parts:
    the next seat needs for the current task.
 
 Use [seat-handoff-template.md](./repo-context/seat-handoff-template.md) when
-passing context to Jester, Daisy, Fury, MM, or Iceman.
+passing context to Daisy Johnson, Daisy, Fury, MM, or Melinda May.
 
 Use [javascript-monorepo-example.md](./repo-context/javascript-monorepo-example.md)
 as the reference shape for a completed context pack in a conventional web-app
@@ -107,7 +107,7 @@ how the repo is developed, run, and validated.
 
 ## Non-JavaScript Guidance
 
-Manifest discovery is not enough by itself. Stinger must also extract the
+Manifest discovery is not enough by itself. Maria Hill must also extract the
 install, run, and test entry points that match the stack:
 
 - **Python**
@@ -151,7 +151,7 @@ If there are no tests, say that plainly.
 
 ## Command Verification
 
-Before handing commands to another seat, Stinger should confirm at least the
+Before handing commands to another seat, Maria Hill should confirm at least the
 shape of the command from the repository itself:
 
 - locate the script in `package.json`, `Makefile`, CI, or repo docs
@@ -166,7 +166,7 @@ Examples:
 - confirm `pytest` is actually the documented test entry point instead of
   guessing from dependency names
 
-Do not hand Iceman, Daisy, Fury, or a local model a command that has not been
+Do not hand Melinda May, Daisy, Fury, or a local model a command that has not been
 grounded in the repo.
 
 ## Handing Context To The Local Model
@@ -181,7 +181,7 @@ node scripts/model/ask-local.mjs orchestrator \
   --context playbooks/repo-context/repo-profile-template.md
 ```
 
-Better still, pass the generated mission-specific context files once Stinger has
+Better still, pass the generated mission-specific context files once Maria Hill has
 produced them.
 
 The local model should receive:
@@ -215,4 +215,4 @@ End with:
 - mission-specific handoff
 - open uncertainties
 
-That is the point where Stinger hands off to the next seat.
+That is the point where Maria Hill hands off to the next seat.

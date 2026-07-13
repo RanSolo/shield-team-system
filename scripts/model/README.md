@@ -55,9 +55,10 @@ Configuration:
 Calls are stateless by default (`store: false`) so repository missions do not
 accumulate as persistent LM Studio chat history.
 
-Role aliases map to the existing prompts in `agents/`: `orchestrator`/`stinger`,
-`investigator`/`jester`, `architect`/`viper`, `implementer`/`iceman`, and
-`reviewer`/`goose`.
+Role aliases map to the seat prompts in `agents/`: `orchestrator`/`hill`/`stinger`,
+`investigator`/`daisy`/`jester`, `architect`/`fury`/`viper`,
+`implementer`/`may`/`iceman`, `reviewer`/`fitz`/`goose`, `product`/`simmons`,
+and `human`/`coulson`.
 
 Run the adapter tests with:
 
@@ -87,6 +88,9 @@ Primary seats:
 - `HILL_MODEL`
 - `FURY_MODEL`
 - `MM_MODEL`
+- `FITZ_MODEL`
+- `SIMMONS_MODEL`
+- `COULSON_MODEL`
 
 Example defaults in `seat-models.example.sh`:
 
@@ -94,19 +98,23 @@ Example defaults in `seat-models.example.sh`:
 - `HILL_MODEL=ornith-1.0-35b`
 - `FURY_MODEL=gpt-5.3-codex`
 - `MM_MODEL=gpt-5.3-codex`
+- `FITZ_MODEL=$MM_MODEL`
+- `SIMMONS_MODEL=human`
+- `COULSON_MODEL=human`
 
 Helpers:
 
-- `get_seat_model <daisy|hill|fury|mm>`
+- `get_seat_model <daisy|hill|fury|mm|fitz|simmons|coulson>`
 - `select_seat_model <seat> [export]`
 
-Legacy SHIELD aliases are also available:
+Compatibility aliases are also available:
 
 - `stinger -> hill`
 - `jester -> daisy`
 - `viper -> fury`
 - `iceman -> fury`
-- `goose -> mm`
+- `goose -> fitz`
+- `maverick -> coulson`
 
 Example usage:
 

@@ -4,9 +4,9 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
 JIRA_SCRIPT="${ROOT_DIR}/jira/product-review-queue.sh"
-MAVERICK_SCRIPT="${ROOT_DIR}/jira/maverick-sprint-tickets.sh"
+COULSON_SCRIPT="${ROOT_DIR}/jira/coulson-sprint-tickets.sh"
 
-echo "=== Goose Review Sweep ==="
+echo "=== Fitz/Simmons Review Sweep ==="
 
 echo
 echo "-- Jira product review --"
@@ -17,11 +17,11 @@ else
 fi
 
 echo
-echo "-- Maverick sprint or assigned tickets --"
+echo "-- Phil Coulson sprint or assigned tickets --"
 if [[ -n "${JIRA_BASE_URL:-}" && -n "${JIRA_USER_EMAIL:-}" && -n "${JIRA_API_TOKEN:-}" ]]; then
-  "${MAVERICK_SCRIPT}" "${JIRA_MAVERICK_MODE:-triage}"
+  "${COULSON_SCRIPT}" "${JIRA_COULSON_MODE:-${JIRA_MAVERICK_MODE:-triage}}"
 else
-  echo "Skipped Maverick Jira query: set JIRA_BASE_URL, JIRA_USER_EMAIL, and JIRA_API_TOKEN."
+  echo "Skipped Phil Coulson Jira query: set JIRA_BASE_URL, JIRA_USER_EMAIL, and JIRA_API_TOKEN."
 fi
 
 echo
@@ -45,11 +45,11 @@ else
 fi
 
 echo
-echo "-- Goose status prompt --"
+echo "-- Fitz/Simmons status prompt --"
 cat <<'EOF'
 Check for:
 - Jira product review waiting on the team
 - GitHub review comments or approvals pending
 - Atlassian documentation feedback pending
-- Direct comms from Goose to Maverick that need routing
+- Direct comms from Jemma Simmons or Leo Fitz to Phil Coulson that need routing
 EOF
