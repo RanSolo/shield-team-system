@@ -18,6 +18,7 @@ test("delivery mode defines the planned-work contract and role boundaries", asyn
   assert.match(mode, /Melinda May \(Implementer\).*owns production implementation/s);
   assert.match(mode, /Daisy Johnson.*evidence that reduces implementation\s+uncertainty/s);
   assert.match(mode, /Nick Fury.*reviews the architecture/s);
+  assert.match(mode, /Nick Fury.*implementation still matches the approved plan/s);
   assert.match(mode, /Leo Fitz.*performs the technical review/s);
   assert.match(mode, /Jemma Simmons.*reviews acceptance criteria/s);
   assert.match(mode, /Phil Coulson.*approves the Mission Brief/s);
@@ -33,9 +34,10 @@ test("delivery playbook encodes stages, readiness, and validation gates", async 
     "3. Architecture Review",
     "4. Implementation",
     "5. Validation",
-    "6. Technical Review",
-    "7. Product Review",
-    "8. Pull Request",
+    "6. Fury Implementation Sanity Review",
+    "7. Technical Review",
+    "8. Product Review",
+    "9. Pull Request",
   ]) {
     assert.match(playbook, new RegExp(`### ${stage.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`));
   }
@@ -57,6 +59,8 @@ test("delivery playbook encodes stages, readiness, and validation gates", async 
   assert.match(playbook, /Implementation or test failures return to Melinda May/);
   assert.match(playbook, /Missing evidence returns to Daisy Johnson/);
   assert.match(playbook, /Architecture concerns return to Nick Fury/);
+  assert.match(playbook, /gives brief, high-leverage guidance/);
+  assert.match(playbook, /implementation still matches the approved plan/);
   assert.match(playbook, /Scope or acceptance ambiguity returns to Phil Coulson/);
   assert.match(playbook, /Maria Hill handles GitHub coordination/);
 });

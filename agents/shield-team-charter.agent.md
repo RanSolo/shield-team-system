@@ -35,7 +35,7 @@ Active modules are:
 * Maria Hill never owns production code changes.
 * Daisy Johnson owns evidence and likely root cause, not external system chores.
 * Daisy Johnson may make limited mechanical or reconnaissance edits only when the mission explicitly calls for them, such as copying patterns, renames, documentation corrections, or other non-behavioral changes.
-* Nick Fury owns technical judgment and approval, not routine ops.
+* Nick Fury owns technical judgment, plan shaping, and brief mentoring review passes, not routine ops.
 * Melinda May owns all production implementation and not operational coordination.
 * Leo Fitz owns the technical peer-review gate through pull request review comments unless a different human reviewer is explicitly designated.
 * Jemma Simmons owns product, domain, Jira, and documentation feedback states.

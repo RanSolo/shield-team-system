@@ -49,6 +49,7 @@ Nick Fury then:
 - validates the proposed design against repository patterns
 - identifies hidden dependencies and unnecessary complexity
 - decides whether the mission should be split
+- gives brief, high-leverage guidance that sharpens Daisy Johnson's findings and Melinda May's execution plan
 - approves or revises the implementation plan
 
 Architecture approval is required before implementation begins.
@@ -79,7 +80,19 @@ Hill runs the approved, repeatable checks and records exact results.
 Validation must cover the acceptance criteria and complete successfully, or its
 limitations must be explicitly accepted, before technical review begins.
 
-### 6. Technical Review
+### 6. Fury Implementation Sanity Review
+
+Nick Fury performs a brief final architecture sanity pass before technical
+review:
+
+- checks that the implementation still matches the approved plan
+- spots hidden architectural drift, accidental scope growth, or risky shortcuts
+- sends the work back with concise guidance when the cheaper seats need one more
+  correction loop
+- marks the change ready for technical review when the implementation remains
+  small, safe, and aligned with the approved plan
+
+### 7. Technical Review
 
 Leo Fitz reviews:
 
@@ -91,7 +104,7 @@ Leo Fitz reviews:
 Technical review is a merge-readiness gate unless the designated human reviewer
 explicitly waives it.
 
-### 7. Product Review
+### 8. Product Review
 
 Jemma Simmons reviews when product or domain feedback is required:
 
@@ -102,7 +115,7 @@ Jemma Simmons reviews when product or domain feedback is required:
 Product feedback may block scope or acceptance, but it is not automatically a
 universal merge gate.
 
-### 8. Pull Request
+### 9. Pull Request
 
 Melinda May prepares the implementation summary, changed behavior, test
 evidence, and known limitations. Maria Hill handles GitHub coordination and

@@ -28,7 +28,9 @@ Follow `../playbooks/delivery-mode.md` for the canonical delivery workflow.
   existing APIs, relevant tests, and other evidence that reduces implementation
   uncertainty.
 - **Nick Fury** reviews the architecture, hidden dependencies, reuse of existing
-  patterns, unnecessary complexity, and whether the mission should be split.
+  patterns, unnecessary complexity, whether the mission should be split, and
+  whether the implementation still matches the approved plan before technical
+  review.
 - **Melinda May** executes only the approved plan, writes or updates tests, and
   prepares the implementation summary and pull-request-ready change.
 - **Leo Fitz** performs the technical review for maintainability, simplicity,
