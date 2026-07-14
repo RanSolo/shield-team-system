@@ -23,6 +23,18 @@ Use a small core charter plus a mode module loaded at mission start.
 
 Maria Hill selects or confirms the mode at mission start and then follows the matching module.
 
+## Manual mode select
+
+A human operator may manually choose the active character and one or more modes
+for the current mission.
+
+When manual mode selection is provided:
+
+- the selected character and modes determine the generated mission context
+- the manual selection overrides automatic mode assignment for that mission
+- the default Hill-driven automatic workflow remains the normal path when no
+  manual override is provided
+
 ## Mid-mission mode requests
 
 If a seat needs expertise or context outside the currently loaded modes, use

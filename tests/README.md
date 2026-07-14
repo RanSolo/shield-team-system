@@ -11,6 +11,9 @@ Current coverage:
 - `mode-request.test.mjs` verifies that the mode-request protocol is encoded in
   the charter, the orchestrator and specialist prompts, the mission-mode docs,
   and the scorecard template.
+- `manual-mode-select.test.mjs` verifies that manual character and mode
+  selection are documented as an optional override that preserves the normal
+  Hill-driven workflow.
 
 Run the current checks with:
 
@@ -18,6 +21,7 @@ Run the current checks with:
 node --test tests/model-harness.test.mjs
 node --test tests/agent-boundaries.test.mjs
 node --test tests/mode-request.test.mjs
+node --test tests/manual-mode-select.test.mjs
 ```
 
 Future coverage should add agent-prompt integrity, mode links, shell-script
