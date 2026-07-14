@@ -14,9 +14,6 @@ Current coverage:
 - `manual-mode-select.test.mjs` verifies that manual character and mode
   selection are documented as an optional override that preserves the normal
   Hill-driven workflow.
-- `backlog-refinement.test.mjs` verifies that backlog refinement is documented
-  as a no-mutation planning playbook with clear Hill/Fury/Coulson
-  responsibilities.
 
 Run the current checks with:
 
@@ -25,7 +22,6 @@ node --test tests/model-harness.test.mjs
 node --test tests/agent-boundaries.test.mjs
 node --test tests/mode-request.test.mjs
 node --test tests/manual-mode-select.test.mjs
-node --test tests/backlog-refinement.test.mjs
 ```
 
 Future coverage should add agent-prompt integrity, mode links, shell-script
