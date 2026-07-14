@@ -1,6 +1,6 @@
 # JavaScript Monorepo Example
 
-Use this example as the target shape when Stinger is discovering a conventional
+Use this example as the target shape when Maria Hill is discovering a conventional
 TypeScript or JavaScript web repository.
 
 ## Mission target

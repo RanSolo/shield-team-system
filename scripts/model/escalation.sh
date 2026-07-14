@@ -27,14 +27,17 @@ DAISY_MODEL="${DAISY_MODEL:-ornith-1.0-35b}"
 HILL_MODEL="${HILL_MODEL:-ornith-1.0-35b}"
 FURY_MODEL="${FURY_MODEL:-gpt-5.3-codex}"
 MM_MODEL="${MM_MODEL:-gpt-5.3-codex}"
+FITZ_MODEL="${FITZ_MODEL:-${MM_MODEL}}"
+SIMMONS_MODEL="${SIMMONS_MODEL:-human}"
+COULSON_MODEL="${COULSON_MODEL:-human}"
 
-# Legacy SHIELD aliases
+# Compatibility aliases from earlier naming
 STINGER_MODEL="${STINGER_MODEL:-${HILL_MODEL}}"
 JESTER_MODEL="${JESTER_MODEL:-${DAISY_MODEL}}"
 VIPER_MODEL="${VIPER_MODEL:-${FURY_MODEL}}"
 ICEMAN_MODEL="${ICEMAN_MODEL:-${FURY_MODEL}}"
-GOOSE_MODEL="${GOOSE_MODEL:-${MM_MODEL}}"
-MAVERICK_MODEL="${MAVERICK_MODEL:-human}"
+GOOSE_MODEL="${GOOSE_MODEL:-${FITZ_MODEL}}"
+MAVERICK_MODEL="${MAVERICK_MODEL:-${COULSON_MODEL}}"
 
 # Tier compatibility
 DEFAULT_MODEL="${DEFAULT_MODEL:-${HILL_MODEL}}"
@@ -48,6 +51,9 @@ get_seat_model() {
     hill) printf "%s" "${HILL_MODEL}" ;;
     fury) printf "%s" "${FURY_MODEL}" ;;
     mm) printf "%s" "${MM_MODEL}" ;;
+    fitz) printf "%s" "${FITZ_MODEL}" ;;
+    simmons) printf "%s" "${SIMMONS_MODEL}" ;;
+    coulson) printf "%s" "${COULSON_MODEL}" ;;
     stinger) printf "%s" "${STINGER_MODEL}" ;;
     jester) printf "%s" "${JESTER_MODEL}" ;;
     viper) printf "%s" "${VIPER_MODEL}" ;;
@@ -107,6 +113,9 @@ if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   echo "  HILL_MODEL=${HILL_MODEL}"
   echo "  FURY_MODEL=${FURY_MODEL}"
   echo "  MM_MODEL=${MM_MODEL}"
+  echo "  FITZ_MODEL=${FITZ_MODEL}"
+  echo "  SIMMONS_MODEL=${SIMMONS_MODEL}"
+  echo "  COULSON_MODEL=${COULSON_MODEL}"
   echo
   echo "Tier compatibility:"
   echo "  DEFAULT_MODEL=${DEFAULT_MODEL}"

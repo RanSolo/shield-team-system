@@ -1,6 +1,6 @@
 # Debugger Mode
 
-First module in the sortie system.
+First module in the mission system.
 
 Use this mode for:
 
@@ -13,55 +13,67 @@ Use this mode for:
 
 ## Lead seat
 
-**Jester (Debugger/Recon)** leads the reasoning flow.  
-**Stinger (Orchestrator)** handles cheap operations, validation commands, and external coordination.
+**Daisy Johnson (Debugger/Recon)** leads the reasoning flow.
+**Maria Hill (Orchestrator)** handles cheap operations, validation commands, and external coordination.
 
 ## Flow
 
-1. **Stinger intake**
+1. **Maria Hill intake**
    - classify the bug
    - collect cheap context
    - identify likely systems involved
    - run cheap status/validation commands when helpful
    - use the Repository Context Discovery playbook when repo shape, test stack, or validation commands are still unclear
 
-2. **Jester investigation**
+2. **Daisy Johnson investigation**
    - inspect relevant files, tests, and evidence
    - identify likely root cause
    - separate facts from assumptions
    - propose the smallest plausible fix plan
 
-3. **Viper review**
+3. **Nick Fury review**
    - review evidence and plan
    - approve, revise, or send back for more investigation
 
-4. **Iceman implementation**
+4. **Melinda May implementation**
    - implement only the approved plan
    - update focused tests when appropriate
    - report exact changes and recommended validation
+   - if blocked, report the blocker instead of handing implementation back to Maria Hill
 
-5. **Stinger validation**
+5. **Maria Hill validation**
    - run the requested Nx lint/test/build/affected or focused checks
    - gather results
-   - summarize for Viper and Maverick
+   - summarize for Nick Fury and Phil Coulson
 
-6. **Viper readiness review**
+## Stuck protocol
+
+If Melinda May is blocked:
+
+1. Melinda May reports blocked.
+2. Maria Hill requests additional reconnaissance from Daisy Johnson.
+3. Maria Hill consults Nick Fury if architecture is involved.
+4. Maria Hill reprioritizes or reassigns work.
+5. Melinda May resumes implementation.
+
+6. **Nick Fury readiness review**
    - decide whether the implementation is acceptable
-   - mark ready for Goose review or request changes
+   - mark ready for Leo Fitz technical review or request changes
 
-7. **Goose review gate**
-   - represent GitHub, Jira, Atlassian, direct comms, or required peer review
-   - hold merge readiness until review is satisfied
+7. **Human review gates**
+   - Leo Fitz represents required technical peer review
+   - Jemma Simmons represents product or domain feedback when relevant
+   - hold merge readiness until the required technical review is satisfied
 
 ## Standard checks
 
-Stinger should prefer scripts or repeatable commands for:
+Maria Hill should prefer scripts or repeatable commands for:
 
 - current branch and worktree status
 - failing test or target command status
 - Nx project/target checks relevant to the bug
 - open GitHub review state if the work is already in PR flow
-- Jira or Goose-side review status when relevant
+- Jira, Fitz, or Simmons review status when relevant
 
 ## Outputs
 
@@ -72,15 +84,15 @@ Debugger Mode should end with:
 - approved small fix plan
 - focused implementation summary
 - focused validation results
-- Goose review status if merge readiness matters
+- Fitz/Simmons review status if merge readiness matters
 
 ## Token-efficiency rule
 
 Use:
 
-- **Stinger** for repetitive checks, routing, and command output
-- **Jester** for investigation and hypothesis quality
-- **Viper** for judgment
-- **Iceman** only after a plan is approved
+- **Maria Hill** for repetitive checks, routing, and command output
+- **Daisy Johnson** for investigation and hypothesis quality
+- **Nick Fury** for judgment
+- **Melinda May** only after a plan is approved
 
-Do not spend expensive model time on cheap operational checks if Stinger can do them first.
+Do not spend expensive model time on cheap operational checks if Maria Hill can do them first.
