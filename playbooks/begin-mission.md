@@ -16,8 +16,9 @@ work.
 - Mission modes are selected after the brief is assembled, not before.
 - Recommended modes are proposals. They are not active until the Mission Brief
   records their activation.
-- Phil Coulson approves or rejects the Mission Brief before implementation is
-  dispatched.
+- Specialist dispatch and all non-lightweight work require Phil Coulson's
+  explicit approval. An eligible lightweight operational mission may instead
+  activate only through the verified-timeout path documented below.
 - Melinda May does not begin implementation until the brief is approved.
 
 ## Workflow
@@ -25,9 +26,10 @@ work.
 1. Understand the objective.
 2. Gather context.
 3. Produce the Mission Brief.
-4. Select and attach mission modes.
+4. Recommend mission modes and proposed seat attachments.
 5. Present the Mission Brief to Phil Coulson for approval.
-6. Dispatch the mission only after approval.
+6. After approval, activate and attach the approved modes, then dispatch the
+   mission.
 
 ## Lightweight operational path
 
@@ -90,5 +92,8 @@ require explicit Coulson approval and cannot use this path.
 
 ## Dispatch boundary
 
-Mission intake ends when Phil Coulson approves the Mission Brief. Only then may
-Maria Hill dispatch specialist work.
+Mission intake ends when the Mission Brief is explicitly approved, or when an
+eligible lightweight operational plan is activated through a verified timeout.
+Maria Hill may dispatch specialist work only after explicit Coulson approval. A
+verified timeout authorizes Hill to execute only the recorded lightweight plan;
+it does not authorize specialist dispatch.

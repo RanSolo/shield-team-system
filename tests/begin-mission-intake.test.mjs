@@ -20,9 +20,12 @@ test("begin mission playbook defines the canonical intake workflow", async () =>
   assert.match(playbook, /1\. Understand the objective\./);
   assert.match(playbook, /2\. Gather context\./);
   assert.match(playbook, /3\. Produce the Mission Brief\./);
-  assert.match(playbook, /4\. Select and attach mission modes\./);
+  assert.match(playbook, /4\. Recommend mission modes and proposed seat attachments\./);
   assert.match(playbook, /5\. Present the Mission Brief to Phil Coulson for approval\./);
-  assert.match(playbook, /6\. Dispatch the mission only after approval\./);
+  assert.match(
+    playbook,
+    /6\. After approval, activate and attach the approved modes, then dispatch the\s+mission\./,
+  );
   assert.match(playbook, /## Lightweight operational path/);
   assert.match(playbook, /Low-risk, reversible operational missions/);
   assert.match(playbook, /Coulson response window/);
@@ -30,6 +33,13 @@ test("begin mission playbook defines the canonical intake workflow", async () =>
   assert.match(playbook, /fully automatic runner is a future capability/);
   assert.match(playbook, /must not infer or merely claim that the window elapsed/);
   assert.match(playbook, /explicit Coulson approval remains required/);
+  assert.match(playbook, /all non-lightweight work require Phil Coulson's\s+explicit approval/);
+  assert.match(
+    playbook,
+    /eligible lightweight operational mission may instead\s+activate only through the verified-timeout path/,
+  );
+  assert.match(playbook, /may dispatch specialist work only after explicit Coulson approval/);
+  assert.match(playbook, /does not authorize specialist dispatch/);
   assert.match(playbook, /## Recommended versus activated modes/);
   assert.match(playbook, /Recommended modes are proposals/);
   assert.match(playbook, /Activated modes are the modes actually attached/);
