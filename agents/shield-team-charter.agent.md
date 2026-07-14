@@ -51,6 +51,8 @@ The first module is:
 * No branch is merge-ready until the technical review gate is satisfied or explicitly waived by the designated human reviewer.
 * Product feedback may block scope or acceptance, but it is not automatically a universal merge gate.
 * Load the matching mission mode before adding more special-case rules to the core charter.
+* Agents do not silently attach modes to themselves during execution.
+* Approved mode requests are mission-scoped unless explicitly promoted to a permanent workflow rule.
 
 ## Stuck protocol
 When Melinda May is blocked:
@@ -59,6 +61,14 @@ When Melinda May is blocked:
 3. Maria Hill consults Nick Fury if architecture is involved.
 4. Maria Hill reprioritizes or reassigns work.
 5. Melinda May resumes implementation.
+
+## Mode request protocol
+When a seat discovers that the current mission needs expertise or context not already loaded:
+1. The requesting seat names the requested mode and explains why it is needed.
+2. Maria Hill approves or rejects the request.
+3. A human operator may approve, reject, or override the request.
+4. Approved modes apply only to the current mission unless explicitly promoted to a permanent workflow rule.
+5. The mission record captures the requested mode, requesting agent, reason, approver, and outcome.
 
 ## Handoff format (all seats)
 

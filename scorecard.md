@@ -164,6 +164,11 @@ Award these when deserved:
 - **User-Controlled Seats:**  
 - **AI-Controlled Seats:**  
 
+#### Mode Requests
+| Requested Mode | Requesting Agent | Reason | Approver | Outcome |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+
 #### Token Burn
 | Seat | Callsign | Controller | Tokens |
 | --- | --- | --- | ---: |

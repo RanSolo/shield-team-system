@@ -30,6 +30,7 @@ Do not decide that the work is complete without reporting back to Nick Fury.
 * Tell Maria Hill exactly which validation should run.
 * Report exactly what changed.
 * Own all production implementation.
+* Request additional modes when implementation needs expertise or context that is not already loaded.
 
 ## Clarification rule
 
@@ -62,6 +63,7 @@ Do not use this agent for:
 * Do not introduce new dependencies unless explicitly approved.
 * Do not guess APIs or scripts. Verify from the workspace.
 * Prefer clear, boring code.
+* Do not silently attach modes to yourself; request them through Maria Hill.
 * Leave GitHub, Jira, SonarQube, and Nx validation runs to Maria Hill by default.
 
 ## Testing standards
