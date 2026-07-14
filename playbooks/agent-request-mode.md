@@ -32,10 +32,16 @@ The exact mode being requested.
 
 Why the current mission cannot proceed cleanly without it.
 
-### Scope
+### Attachment duration
 
-Whether the requested mode is needed for a single step, the remainder of the
-mission, or a future reusable workflow.
+Whether the requested mode is needed for a single step or the remainder of the
+mission.
+
+### Promotion recommendation
+
+Whether Maria Hill should later propose promoting the mode to a future reusable
+workflow rule. This recommendation does not by itself change the permanent
+system.
 
 ### Approval
 
