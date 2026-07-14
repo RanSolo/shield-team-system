@@ -37,6 +37,10 @@ test("mission docs and scorecard record mode requests", async () => {
   assert.match(missionModes, /## Mid-mission mode requests/);
   assert.match(playbook, /## Rules/);
   assert.match(playbook, /The requesting seat must explain why the mode is needed\./);
+  assert.match(playbook, /### Attachment duration/);
+  assert.match(playbook, /single step or the remainder of the\s+mission/);
+  assert.match(playbook, /### Promotion recommendation/);
+  assert.match(playbook, /does not by itself change the permanent\s+system/);
   assert.match(scorecard, /#### Mode Requests/);
   assert.match(scorecard, /\| Requested Mode \| Requesting Agent \| Reason \| Approver \| Outcome \|/);
 });
